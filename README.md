@@ -2,7 +2,7 @@
 Checkout system created for the grocery store known only as GroceryCo
 
 ## How to run
-Start the program by typing *python3 checkout.py" into the terminal.
+Start the program by typing python3 checkout.py into the terminal.
 you will then be prompted to enter your employee ID, which is 1234.
 after entering your employee ID you will be prompted to enter the products that are currently available (products are not saved on program exit in this version).
 ensure that you enter the products in the given format, as you may not proceed without doing so.
@@ -15,13 +15,13 @@ Promotions are listed and your grand total is provided at the bottom of your rec
 end of program.
 
 ## Assumptions
-Employees have must enter products every time that the program runs, I would suggest implementing file i/o in the future, with the option for employees to add and remove products
-Employees have total power over naming products and promotions, so spelling errors are possible and lead to failures when the customer is entering their list
+Employees have must enter products every time that the program runs, I would suggest implementing file i/o in the future, with the option for employees to add and remove products.
+Employees have total power over naming products and promotions, so spelling errors are possible and lead to failures when the customer is entering their list.
 (the products will be seen as not in inventory)
-A product can only have a single promotion at any time, adding a new promotion for an item will overwrite the last
-The entire program only runs once so multiple customers cant check out in one session. This is similar to a self checkout in that every transaction is a different session
+A product can only have a single promotion at any time, adding a new promotion for an item will overwrite the last.
+The entire program only runs once so multiple customers cant check out in one session. This is similar to a self checkout in that every transaction is a different session.
 
 ## Notes
-**Last minute change:** I had to change where the user input for products and promotions is first read, it is now checkout.py in get items and get promos respectively. This was to get the tests working as I was unable to simulate command line input while the functions were being tested so feeding it in from as a reference was the solution
+**Last minute change:** I had to change where the user input for products and promotions is first read, it is now checkout.py in get items and get promos respectively. This was to get the tests working as I was unable to simulate command line input while the functions were being tested so feeding it in from as a reference was the solution.
 
-I would like to add more testing in the future, but due to my limited experience with pytest, some of the testing was done by hand. This will be worked on going forward to improve efficiency and skills
+I would like to add more testing in the future, but due to my limited experience with pytest, some of the testing was done by hand. This will be worked on going forward to improve efficiency and skills.
