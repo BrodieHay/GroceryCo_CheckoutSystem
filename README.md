@@ -20,3 +20,8 @@ Employees have total power over naming products and promotions, so spelling erro
     (the products will be seen as not in inventory)
 A product can only have a single promotion at any time, adding a new promotion for an item will overwrite the last
 The entire program only runs once so multiple customers cant check out in one session. This is similar to a self checkout in that every transaction is a different session
+
+#Notes
+**Last minute change: I had to change where the user input for products and promotions is first read, it is now checkout.py in get items and get promos respectively. This was to get the tests working as I was unable to simulate command line input while the functions were being tested so feeding it in from as a reference was the solution
+
+I would like to add more testing in the future, but due to my limited experience with pytest, some of the testing was done by hand. This will be worked on going forward to improve efficiency and skills
