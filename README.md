@@ -1,4 +1,4 @@
-# groceryco_checkout_system
+#groceryco_checkout_system
 Checkout system created for the grocery store known only as GroceryCo
 
 ## How to run
