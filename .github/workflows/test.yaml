@@ -1,0 +1,12 @@
+name: Run basic tests
+on: push
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: run tests
+        run: |
+         pytest .
