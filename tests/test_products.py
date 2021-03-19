@@ -1,4 +1,4 @@
-from GroceryCo_CheckoutSystem.products import products_dict, insert_products
+from GroceryCo_CheckoutSystem.products import insert_products
 
 
 def test_answer():
