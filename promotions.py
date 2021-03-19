@@ -1,24 +1,25 @@
-#!/usr/bin/env python
-
-Promotions = {}
-
-def insertPromotions(userInput):
-    newPromotions = list(map(str, userInput.split()))
-    itemNames = newPromotions[::4]
-    i = 0
-    for items in itemNames:
-        key = str(newPromotions[i])
-        amount = float(newPromotions[i+1])
-        promo = str(newPromotions[i+2])
-        price = float(newPromotions[i+3])
-        d = {items:{'key': key, 'amount': amount, 'promo': promo, 'price': price}}
-        Promotions.update(d)
-        i+=4
-    return Promotions
-
-def test_answer():
-    str = "apple 2 BOGO50 1.5 orange 6 6for10 10 watermelon 2 BOGOFree 5"
-    assert insertPromotions(str) == {'apple':{'key': 'apple', 'amount': 2, 'promo': 'BOGO50', 'price': 1.5},
-                                'orange':{'key': 'orange', 'amount': 6, 'promo': '6for10', 'price': 10},
-                                'watermelon': {'key': 'watermelon', 'amount': 2, 'promo': 'BOGOFree', 'price': 5}
-                                }
+def insert_promotions():
+    promotions_dict = {}
+    valid = False
+    while not valid:
+        user_input = input("Please enter any promotions in format 'Product Amount Promotion Price' (e.g. apple 2 BOGO50 1):\n")
+        new_promotions = list(map(str, user_input.split()))
+        item_names = new_promotions[::4]
+        i = 0
+        if (len(new_promotions)/4).is_integer():
+            for items in item_names:
+                key = str(new_promotions[i])
+                promo = str(new_promotions[i+2])
+                try:
+                    amount = int(new_promotions[i+1])
+                    price = float(new_promotions[i+3])
+                    d = {items:{'key': key, 'amount': amount, 'promo': promo, 'price': price}}
+                    promotions_dict.update(d)
+                    i+=4
+                    valid = True
+                except:
+                    print("Prices must be decimal numbers (e.g. 1.00) and amounts must be round numbers (e.g. 5), please try again")
+                    valid = False
+        else:
+            print("Some promotion fields are missing, please try again")
+    return promotions_dict
