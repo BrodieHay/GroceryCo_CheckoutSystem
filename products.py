@@ -1,8 +1,10 @@
-def insert_products():
+def insert_products(user_input):
     products_dict = {}
     valid = False
+    input_valid = True
     while not valid:
-        user_input = input("Please enter the pricing rules in format 'Product Price' (e.g. apple 0.75 orange 1):\n")
+        if not input_valid:
+            user_input = input("Please enter the pricing rules in format 'Product Price' (e.g. apple 0.75 orange 1):\n")
         new_products = list(map(str, user_input.split()))
         item_names = new_products[::2]
         i = 0
@@ -18,6 +20,8 @@ def insert_products():
                 except:
                     print("Prices must be numbers (e.g. 5 or 1.00), please try again")
                     valid = False
+                    input_valid = False
             else:
                 print("Some product fields are missing, please try again")
+                input_valid = False
     return products_dict

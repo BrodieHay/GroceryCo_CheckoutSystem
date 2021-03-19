@@ -30,12 +30,14 @@ def get_employee_id(products_dict, promotions_dict):
 
 def get_items():
     #gets user input from the shop employee to populate the product dictionary in products.py
-    return insert_products()
+    user_input = input("Please enter the pricing rules in format 'Product Price' (e.g. apple 0.75 orange 1):\n")
+    return insert_products(user_input)
 
 
 def get_promos():
     #gets user input from the shop employee to populate the promotions_dict dictionary in promotions.py
-    return insert_promotions()
+    user_input = input("Please enter any promotions in format 'Product Amount Promotion Price' (e.g. apple 2 BOGO50 1):\n")
+    return insert_promotions(user_input)
 
 def get_grocery_list(bag, products_dict):
     #Gets the customers grocery list from the command line input
