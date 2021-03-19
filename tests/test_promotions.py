@@ -1,4 +1,4 @@
-from GroceryCo_CheckoutSystem.promotions import insert_promotions
+from groceryco_checkout_system.promotions import insert_promotions
 
 def test_answer():
     user_input = "apple 2 BOGO50 1.5 orange 6 6for10 10 watermelon 2 BOGOFree 5"
