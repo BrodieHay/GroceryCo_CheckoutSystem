@@ -1,30 +1,22 @@
 # GroceryCo_CheckoutSystem
 Checkout system created for the grocery store known only as GroceryCo
 
-# Coding Exercise
-## Overview
-GroceryCo wants to develop a checkout system. Their pricing schemes are defined such as apples cost `75 cents` each three apples cost `$2.00`
-Implement a checkout system which handles their pricing schemes.
-## Details
-Write a console program which takes as input an unsorted list of single items from a shopping cart and performs a `check-out`: printing an itemized receipt and total price.
-Item prices can be defined in several ways.
-An item may be priced individually.
-For example, the 'Apple' item might cost 75 cents.
-Item prices may also be based on quantity purchased.
-For example, as a promotion, you may buy three `Apples` for `$2.00`.
-Other promotions could be `buy one get one free” or “buy one, get one for 50% off`
-The checkout should be able to accept items in any order and calculate the price appropriately.
-For example, an Apple might be scanned, followed by 2 Oranges, and then an Apple again.
-Prices and promotions often change at the last minute. Each time a checkout transaction begins, the system should accept a set of pricing rules for all items.
-Note that there may be multiple pricing rules.
-Submit your solution via a GitHub repository. Include a README with any necessary information.
-The solution may use third party libraries but must be supplied.
-Submissions are due three (3) days from receipt of this exercise.
-## Criteria
-The solution will be examined from these perspectives:
-- good design
-- readability
-- maintenance
-- testing
-- operational-ness
-- aesthetics
+#How to run
+Start the program by typing *python3 checkout.py" into the terminal
+  you will then be prompted to enter your employee ID, which is 1234
+  after entering your employee ID you will be prompted to enter the products that are currently available (products are not saved on program exit in this version)
+  ensure that you enter the products in the given format, as you may not proceed without doing so
+  once all the new products are entered, you will be prompted to enter any promotions, if they exist
+  once promotions are entered or you state that no promotions are currently available, the terminal is ready for the "customer" (also you)
+  you will be prompted to insert your grocery list as a single line of unsorted single items, as if you were going through a self checkout at a store and scanning items yourself
+  once the list is given, available promotions will be applied and your total will be calculated
+  Your receipt is then displayed on the screen, listing amounts of each product, their individual price and a subtotal.
+      Promotions are listed and your grand total is provided at the bottom of your receipt.
+  end of program
+
+#Assumptions
+Employees have must enter products every time that the program runs, I would suggest implementing file i/o in the future, with the option for employees to add and remove products
+Employees have total power over naming products and promotions, so spelling errors are possible and lead to failures when the customer is entering their list
+    (the products will be seen as not in inventory)
+A product can only have a single promotion at any time, adding a new promotion for an item will overwrite the last
+The entire program only runs once so multiple customers cant check out in one session. This is similar to a self checkout in that every transaction is a different session
